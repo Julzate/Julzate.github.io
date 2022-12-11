@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-image: url("../imgs/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 1000px 800px;
+    background-position: 110% -18%;
+    
+}
+
+.img-left{    
+    background-size: 800px ;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    left: -434px;
+    bottom: -800px;
+}
+
+#CTA{
+    background-image: url("../imgs/bg-simplify-section-desktop.svg ");
+    background-repeat: no-repeat;    
+}
+
+@media (max-width:576px) {
+    body{
+        background-position: 100px -50px;
+        
+    }
+    
+    #CTA{
+        background-image: url("../imgs/bg-simplify-section-desktop.svg");
+    }
+
+}
+
+.hamburger{
+    position:relative;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25;
+
+}
+
+.hamburger-top,
+.hamburger-mid,
+.hamburger-bot{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 2px;
+    background: black;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-mid{
+    transform: translateY(7px);
+}
+
+.hamburger-bot{
+    transform: translateY(14px);
+}
+
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+
+.open .hamburger-mid{
+    display: none;
+}
+
+.open .hamburger-bot{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+/* Carousel Styles */
+
+.carousel{
+    width: 70vw;
+    height: 50vh;
+    margin: 10px auto;
+    position: relative;        
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out ;
+    transition-delay: 200ms;
+} 
+
+.slide[data-active]{
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button{    
+    z-index: 2;
+    font-size: 3.5rem;
+    background: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);   
+    cursor: pointer;
+    border-radius: .25rem;
+    border: none;
+    padding: 0;    
+   
+    
+}
+
+.carousel-button:hover,
+.carousel-button:focus{
+    color: rgb(102, 91, 91);
+    
+}
+
+.carousel-button:focus{
+    outline: 1px solid black;
+        
+}
+
+.carousel-button.prev{
+    left: -3.5rem;
+}
+
+.carousel-button.next{
+    right: -3.5rem;
+}
+
